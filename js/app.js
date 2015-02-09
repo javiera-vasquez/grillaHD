@@ -1,1 +1,2 @@
 $(document).foundation();
+$("#nav").sticky();

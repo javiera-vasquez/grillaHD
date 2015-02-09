@@ -38,27 +38,31 @@ $red: $bad;
 
 @font-face {
   font-family: 'NeoSans';
-  src: url('../fonts/neosansstd-medium-webfont.eot');
-  src: url('../fonts/neosansstd-medium-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/neosansstd-medium-webfont.woff') format('woff'), url('../fonts/neosansstd-medium-webfont.ttf') format('truetype'), url('../fonts/neosansstd-medium-webfont.svg#NeoSansStdMedium') format('svg');
+  src: url('../fonts/neosansstd-regular-webfont.eot');
+  src: url('../fonts/neosansstd-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/neosansstd-regular-webfont.woff') format('woff'), url('../fonts/neosansstd-regular-webfont.ttf') format('truetype'), url('../fonts/neosansstd-regular-webfont.svg#NeoSansStdRegular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'NeoSans';
-  src: url('../fonts/neosansstd-bold-webfont.eot');
-  src: url('../fonts/neosansstd-bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/neosansstd-bold-webfont.woff') format('woff'), url('../fonts/neosansstd-bold-webfont.ttf') format('truetype'), url('../fonts/neosansstd-bold-webfont.svg#NeoSansStdMedium') format('svg');
+  src: url('../fonts/neosansstd-medium-webfont.eot');
+  src: url('../fonts/neosansstd-medium-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/neosansstd-medium-webfont.woff') format('woff'), url('../fonts/neosansstd-medium-webfont.ttf') format('truetype'), url('../fonts/neosansstd-medium-webfont.svg#NeoSansStdMedium') format('svg');
   font-weight: bold;
   font-style: normal;
 }
 
-body {
-    font-family: 'NeoSans', sans-serif;
-    // letter-spacing: rem-calc(1);
-    // min-width: 500px;
-}
+// body, p {
+//     @include normal;
+//     font-family: 'NeoSans', sans-serif;
+//     // letter-spacing: rem-calc(1);
+//     // min-width: 500px;
+// }
 
-h1, h2, h3, h4, h5, h5 {font-family: 'NeoSans', sans-serif;}
+h1, h2, h3, h4, h5, h5 {
+    @include bold;
+    font-family: 'NeoSans', sans-serif;
+}
 
 // Function to make a custom button, don't necessary in this case
 @mixin basic-button($bg-color:$primary-color, $text-color: $white, $size: 14, $padding: 35) {
@@ -107,6 +111,7 @@ h1, h2, h3, h4, h5, h5 {font-family: 'NeoSans', sans-serif;}
 }
 
 #nav {
+    z-index: 9999;
     background: black;
     height: 120px;
     img {
