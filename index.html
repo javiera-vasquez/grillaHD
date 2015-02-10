@@ -16,7 +16,7 @@
   </head>
   <body>
 
-    <div id="toolbar">
+    <div id="toolbar" class="show-for-medium-up">
       <div class="row">
         <div class="large-12 columns">
           <ul class="inline-list left">
@@ -26,15 +26,22 @@
             <li><a href="http://centrodeayudaonline.vtr.cl/" target="_blank">Centro Ayud@ Online</a></li>
             <li><a href="http://vtr.com/programacion" target="_blank">Programación TV</a></li>
           </ul>
-          <a href="http://vtr.com/" target="_blank" id="hl2011-logo" class="right"></a>
+          <a href="http://vtr.com/" target="_blank" id="hl2011-logo" class="right show-for-large-up"></a>
         </div>
       </div>
     </div>
     <!-- end toolbar -->
     <div id="nav">
         <div class="row">
-          <div class="large-12 columns">
-            <img src="images/logo-vtr-hd.jpg" width="153" height="62" alt="VTR HD">
+          <div class="large-2 medium-2 small-3 columns">
+            <img src="images/logo-vtr-hd.png" width="153" height="62" alt="VTR HD">
+          </div>
+          <div class="large-10 medium-10 small-9 columns">
+            <ul class="inline-list right">
+              <li class="show-for-medium-up"><a href="#">Programación</a></li>
+              <li class="show-for-medium-up"><a href="#">¿Qué es HD?</a></li>
+              <li><a href="#" class="wantMore">¡Lo quiero!</a></li>
+            </ul>
           </div>
         </div>
     </div>
@@ -48,150 +55,155 @@
     </div>
     <!-- end introduction -->
 
+    <div class="row">
+      <div class="large-12 columns">
+        <h3 class="introduction-to-hd">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.</h3>
+      </div>
+    </div>
+
+    <div id="region">
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="panel">
+
+            <h4>Conoce los canales asociados a tu ciudad</h4>
+            <div class="row">
+              <div class="large-6 columns medium-6 small-6 columns">
+                <select class="radius">
+                  <option value="" disabled selected>Región</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </label>
+              </div>
+              <div class="large-6 columns medium-6 small-6 columns">
+                <select class="radius">
+                  <option value="" disabled selected>Comuna</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </label>
+              </div>
+            </div>
+          </div>
+
+          </div>
+        </div>
+      </div>
+
     <div id="content">
       <div class="row">
         <div class="large-12 columns">
 
-          <h3>A partir del <strong>11 de febrero </strong> será mucho más fácil y cómodo encontrar <strong>tus canales favoritos en HD</strong> porque estarán ordenados por categorías según tus gustos e intereses <strong>desde el canal 700</strong> en adelante.</h3>
+          <div id="channelGrid" class="row medium-collapse large-collapse">
 
-          <div class="box-content">
+            <div class="large-3 medium-3 small-12 columns">
+              <div id="tagsChannel">
+                <ul class="">
+                  <li id="tags-1">Infantil</li>
+                  <li id="tags-2">Cultura</li>
+                  <li id="tags-3" class="active">Tendencia - Música</li>
+                  <li id="tags-4">Series</li>
+                  <li id="tags-5">Cine</li>
+                  <li id="tags-6">Deporte</li>
+                  <li id="tags-7">Adulto</li>
+                  <li class="disclaimer">
+                    <span>Selecciona un barrio para conocer los canales asociados. </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+              <!-- end filter for channel -->
+
+            <div class="large-9 medium-9 small-12 columns">
+              <div id="tabsChannel">
+                <ul class="">
+                  <li></li>
+                </ul>
+              </div>
+              <!-- end tabs -->
+              <div id="loopOfChannel" class="panel">
+                <ul ></ul>
+              </div>
+              <!-- end loop -->
+            </div>
+            <!-- end grid of channel -->
+
+          </div>
+          <!-- end #channel grid -->
+
+          <div id="hdInfo">
+
             <div class="row">
-              <div class="large-12 columns">
+              <div class="large-3 medium-4 small-12 columns">
+                <h3>¿Qué es HD?</h3>
+              </div>
+              <div class="large-9 medium-8 small-12 columns">
+                <p>La <em>Alta Definición</em> (abreviada en HD, de inglés High Definition) es un sistema de video con una mayor resolución que la Definición Estándar (abreviada en SD, del inglés Standard Definition). Posee una calidad superior de imagen y sonido que la estándar, otorgando 5 veces mayor nitidez.</p>
+              </div>
+            </div>
 
-                <h2>Canales <span>HD</span></h2>
+            <div class="row">
+              <div class="large-3 medium-4 small-12 columns">
+                <h3>¿Cómo puedo tener HD?</h3>
+              </div>
+              <div class="large-9 medium-8 small-12 columns">
+                <ul class="disc">
+                  <li>Debes contar con un <em>televisor compatible con HD</em>.</li>
+                  <li>Tener un <em>decodificador d-BOX|HD o un d-BOX|PRO</em>, capaces de transmitir señales en HD.</li>
+                  <li>Tener <em>contratada programación en HD</em>.</li>
+                 </ul>
+              </div>
+            </div>
 
-                <div class="row large-collapse">
+            <div class="row">
+              <div class="large-3 medium-4 small-12 columns">
+                <h3>Decodificadores compatibles con HD</h3>
+              </div>
+              <div class="large-9 medium-8 small-12 columns">
 
-                  <div class="large-3 columns">
-                    <div class="inner-box orange">
-                      <h4 class="radius">INFANTIL</h4>
-                      <p><img src="images/canales/1.jpg" alt=""></p>
-                    </div>
-                  </div>
-
-                  <div class="large-5 columns">
-                    <div class="inner-box">
-                      <h4 class="radius">CULTURA</h4>
-                      <p><img src="images/canales/2.jpg" alt=""></p>
-                    </div>
-                  </div>
-
-                  <div class="large-4 columns">
-                    <div class="inner-box green">
-                      <h4 class="radius">TENDENCIAS / MUSICA</h4>
-                      <p><img src="images/canales/3.jpg" alt=""></p>
-                    </div>
-                  </div>
-
-                  <div class="large-12 columns">
-                    <div class="inner-box green">
-                      <h4 class="radius">SERIES</h4>
-                      <p><img src="images/canales/4.jpg" alt=""></p>
-                    </div>
-                  </div>
-
-                  <div class="large-9 columns">
-                    <div class="inner-box rose">
-                      <h4 class="radius">CINE</h4>
-                      <p><img src="images/canales/5.jpg" alt=""></p>
-                    </div>
-                  </div>
-
-                  <div class="large-3 columns">
-                    <div class="inner-box">
-                      <h4 class="radius">DEPORTES</h4>
-                      <p><img src="images/canales/6.jpg" alt=""></p>
-                    </div>
-                  </div>
-
-                </div>
-                <!-- end row -->
+                <table id="dboxTable">
+                  <thead>
+                    <tr>
+                      <th class="list-header">Características</th>
+                      <th class="normal-header">d-BOX|HD</th>
+                      <th class="normal-header">d-BOX|Pro</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td></td><td><img class="dbox" src="images/dbox-hd.jpg"></td><td><img class="dbox" src="images/dbox-pro.jpg"></td></tr>
+                    <tr><td>Graba, pausa y retrocede la TV en vivo</td><td></td><td><img src="images/check.png"></td></tr>
+                    <tr><td>Graba hasta 2 programas simultáneamente</td><td></td><td><img src="images/check.png"></td></tr>
+                    <tr><td>Permite programar grabaciones</td><td></td><td><img src="images/check.png"></td></tr>
+                    <tr><td>Permite ver en Alta Definición</td><td><img src="images/check.png"></td><td><img src="images/check.png"></td></tr>
+                    <tr><td>Guía de Programación</td><td><img src="images/check.png"></td><td><img src="images/check.png"></td></tr>
+                    <tr><td>Control Familiar</td><td><img src="images/check.png"></td><td><img src="images/check.png"></td></tr>
+                    <tr><td>Acceso a VOD</td><td><img src="images/check.png"></td><td><img src="images/check.png"></td></tr>
+                    <tr><td>Recordatorio de Programas</td><td><img src="images/check.png"></td><td><img src="images/check.png"></td></tr>
+                    <tr><td>Canales Carteleras</td><td><img src="images/check.png"></td><td><img src="images/check.png"></td></tr>
+                    <tr><td>Compra en Pantalla (canal 861)</td><td><img src="images/check.png"></td><td><img src="images/check.png"></td></tr>
+                    <tr><td>40 Canales de Música</td><td><img src="images/check.png"></td><td><img src="images/check.png"></td></tr>
+                    <tr><td>Salas de Cine</td><td><img src="images/check.png"></td><td><img src="images/check.png"></td></tr>
+                    <tr><td>Canal de Juegos</td><td><img src="images/check.png"></td><td><img src="images/check.png"></td></tr>
+                    <tr><td>Canal de Configuración Control Remoto</td><td><img src="images/check.png"></td><td><img src="images/check.png"></td></tr>
+                  </tbody>
+                </table>
 
               </div>
             </div>
+
           </div>
-          <!-- end box content -->
+          <!-- end #hdInfo -->
 
-          <div class="box-content">
-            <div class="row">
-              <div class="large-12 columns">
-
-                <h2>Canales abiertos <span>HD</span></h2>
-
-                <div class="row large-collapse">
-                  <div class="large-12 columns">
-                  <div class="inner-box rose">
-                      <h4 class="radius"><span>Recuerda que los actuales planes de TV de VTR, te facilitan el acceso a algunos canales abiertos en tu ciudad</span></h4>
-                      <p><img src="images/canales/7.jpg" alt=""></p>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-          <!-- end box content -->
-
-          <div class="box-content">
-            <div class="row">
-              <div class="large-12 columns">
-
-                <h2>Premium <span>HD</span></h2>
-
-                <div class="row large-collapse">
-                  <div class="large-6 columns">
-                    <div class="inner-box">
-                      <h4 class="radius">CINE</h4>
-                      <p><img src="images/canales/10.jpg" alt=""></p>
-                    </div>
-                  </div>
-                  <div class="large-4 columns">
-                  <div class="inner-box rose">
-                      <h4 class="radius">DEPORTES</h4>
-                      <p><img src="images/canales/8.jpg" alt=""></p>
-                    </div>
-                  </div>
-                  <div class="large-2 columns">
-                    <div class="inner-box green">
-                      <h4 class="radius">ADULTO</h4>
-                      <p><img src="images/canales/9.jpg" alt=""></p>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-          <!-- end box content -->
-
-          <div class="box-content">
-            <div class="row">
-              <div class="large-12 columns">
-
-                <h2>Servicios VTR</h2>
-
-                <div class="row large-collapse">
-                  <div class="large-2 columns">
-                  <div class="inner-box servicios">
-                      <p><img src="images/canales/11.jpg" alt=""></p>
-                    </div>
-                  </div>
-                  <div class="large-8 columns">
-                    <div class="inner-box servicios">
-                      <p><img src="images/canales/12.jpg" alt=""></p>
-                    </div>
-                  </div>
-                  <div class="large-2 columns">
-                    <div class="inner-box servicios">
-                      <p><img src="images/canales/13.jpg" alt=""></p>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-          <!-- end box content -->
+          <div id="package">
+          </div> <!-- end #package -->
 
         </div>
       </div>

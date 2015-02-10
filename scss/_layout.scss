@@ -7,6 +7,7 @@
 
 @mixin bold {font-weight: 600;}
 @mixin normal {font-weight: normal;}
+@mixin neo {font-family: 'NeoSans', sans-serif;}
 @mixin light {font-weight: 100;}
 @mixin light-2 {font-weight: 200;}
 
@@ -19,16 +20,16 @@ $black: #010103;
 $ccc: #ccc;
 
 // Basic
-$primary: #DC0D13;
+$primary: #c20e1a;
 $secondary: #32a8ce;
 $header: #363636;
 $oil: #333;
 $smoke: #eee;
 $filter: #d05050;
 $jet: #363636;
-$column: #F2F2F2;
+$column: #f2f2f2;
 $bg_lodge: #FCFCFC;
-$border: #d3d3d3;
+$border: #d8d8d8;
 
 // Alerts
 $good: #3BA656;
@@ -112,10 +113,25 @@ h1, h2, h3, h4, h5, h5 {
 
 #nav {
     z-index: 9999;
-    background: black;
-    height: 120px;
+    background: $black;
+    padding: 1em 0 0;
+    height: 80px;
     img {
-        margin-top: 25px;
+        margin-top: -5px;
+    }
+    .inline-list {
+        margin: 0;
+        a {
+            @include neo;
+            @include bold;
+            padding: 0.5em 1em;
+            color: $white;
+        }
+    }
+    .wantMore {
+        background-color: $primary;
+        border-radius: 5px;
+        border-bottom: 4px solid darken($primary, 15%);
     }
 }
 
@@ -123,28 +139,133 @@ h1, h2, h3, h4, h5, h5 {
     background: url(../images/bk.jpg) repeat-x bottom;
     p {
         text-align: center;
-        margin-top: -30px;
+        // margin-top: -30px;
+    }
+}
+
+.introduction-to-hd {
+    @include normal;
+    font-size: rem-calc(20);
+    text-align: center;
+    margin: 2em 1em;
+    color: lighten($header, 10%);
+    line-height: 1.5;
+}
+
+#region {
+    z-index: 9999;
+    .panel {
+        margin-bottom: 0;
+    }
+    h4 {
+        font-size: rem-calc(18);
+        margin-bottom: 1em;
+    }
+    select {
+        @include bold;
+        margin-bottom: 0;
+        cursor: pointer;
+        &:hover {
+            background-color: $white;
+            box-shadow: 0 1px 3px rgba($black, 0.2);
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+#region-sticky-wrapper.is-sticky {
+    #region {
+        background: $column;
+        border-bottom: 1px solid $border;
+        h4 {@include none;}
+        .panel {
+            border: none;
+            padding:  0.75rem 0;
+        }
     }
 }
 
 #content {
     margin-bottom: 5em;
-    h3 {
-        font-size: rem-calc(20);
-        text-align: center;
-        margin: 2em;
-        color: lighten($header, 10%);
-        line-height: 1.3;
+    padding-top: 2em;
+}
+
+#channelGrid {
+    margin: 0.9375rem 0;
+}
+
+#hdInfo {
+    .row {margin-bottom: 2em;}
+    h3   {font-size: rem-calc(20);}
+    em {
+        font-style: normal;
+        color: $primary;
     }
-    .disclaimer {
-        margin-top: -3em;
-        margin-bottom: 3em;
-        color: darken(#ccc, 30%);
-        // color: rgba($white, 0.5);
-        font-size: rem-calc(12);
+    .disc, p {
+        border-left: 1px solid $border;
+        padding-left: 1em;
+        margin-left: 0;
+        li {
+            margin-left: 1em;
+        }
+    }
+    #dboxTable {
+        width: 100%;
+        thead {
+            background: $black;
+            th {
+                @include neo;
+                background-color: #333;
+                color: $white;
+            }
+            .list-header {width: 40%}
+            .normal-header {
+                @include bold;
+                width: 30%;
+                text-align: center;
+            }
+        }
+        tr {
+            td {
+                text-align: center;
+                img {
+                    width: 16px;
+                    height: 16px;
+                }
+                .dbox {
+                    width: 90%;
+                    height: auto;
+                }
+                &:first-child {
+                    text-align: left;
+                }
+            }
+        }
     }
 }
 
+footer {
+    background: $black url(../images/borde.png)  top repeat-x;
+    .disclaimer {
+        margin-top: 90px;
+        color: rgba($white, 0.5);
+        font-size: rem-calc(11);
+        a {
+            color: rgba($white, 0.5);
+        }
+    }
+    .logos-footer {
+        text-align: right;
+        margin-bottom: 0;
+        .vtrcom img{
+            margin-top: 60px;
+        }
+    }
+}
+
+// Deprecated
 .box-content {
     border: 1px solid $black;
     margin-bottom: 3em;
@@ -214,27 +335,6 @@ h1, h2, h3, h4, h5, h5 {
     font-size: rem-calc(13);
     line-height: 1.5;
 }
-
-footer {
-    background: $black url(../images/borde.png)  top repeat-x;
-    .disclaimer {
-        margin-top: 90px;
-        color: rgba($white, 0.5);
-        font-size: rem-calc(11);
-        a {
-            color: rgba($white, 0.5);
-        }
-    }
-    .logos-footer {
-        text-align: right;
-        margin-bottom: 0;
-        .vtrcom img{
-            margin-top: 60px;
-        }
-    }
-}
-
-
 
 
 
