@@ -189,11 +189,50 @@ h1, h2, h3, h4, h5, h5 {
 
 #content {
     margin-bottom: 5em;
-    padding-top: 2em;
+    padding-top: 3em;
 }
 
 #channelGrid {
-    margin: 0.9375rem 0;
+    margin-bottom: 5em;
+    // margin: 0 0.9375rem 5em;
+    #tagsChannel {
+        ul {
+            li {
+                text-align: right;
+                list-style: none;
+            }
+            .tags {
+                line-height: 2;
+                margin-bottom: 10px;
+                font-size: rem-calc(13);
+                span {
+                    padding: 5px 10px;
+                    border: 1px solid $border;
+                    background: rgba($column, 0.5);
+                    border-radius: 25px;
+                }
+                &:hover {
+                    cursor: pointer;
+                    span {
+                        color: $white;
+                        background: rgba($primary, .75);
+                        border-color: $primary;
+                    }
+                }
+            }
+            .tags.active {
+                span {
+                    color: $white;
+                    border-color: $primary;
+                    background: $primary;
+                }
+            }
+            .disclaimer {
+                margin-top: 20px;
+                font-size: rem-calc(13);
+            }
+        }
+    }
 }
 
 #hdInfo {
