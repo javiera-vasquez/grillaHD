@@ -79,6 +79,8 @@ h1, h2, h3, h4, h5, h5 {
     }
 }
 
+
+// Header and tooolbar of the site
 #toolbar {
     background: black;
     border-bottom: 1px solid rgba($white, 0.35);
@@ -112,7 +114,7 @@ h1, h2, h3, h4, h5, h5 {
 }
 
 #nav {
-    z-index: 9999;
+    // z-index: 9999;
     background: $black;
     padding: 1em 0 0;
     height: 80px;
@@ -152,8 +154,9 @@ h1, h2, h3, h4, h5, h5 {
     line-height: 1.5;
 }
 
+// Select for the region to show
 #region {
-    z-index: 9999;
+    // z-index: 9999;
     .panel {
         margin-bottom: 0;
     }
@@ -175,64 +178,148 @@ h1, h2, h3, h4, h5, h5 {
     }
 }
 
-#region-sticky-wrapper.is-sticky {
-    #region {
-        background: $column;
-        border-bottom: 1px solid $border;
-        h4 {@include none;}
-        .panel {
-            border: none;
-            padding:  0.75rem 0;
-        }
+// Start the channel grid
+#region.scroll-to-fixed-fixed {
+    background: $column;
+    border-bottom: 1px solid $border;
+    h4 {@include none;}
+    .panel {
+        border: none;
+        padding:  0.75rem 0;
     }
-}
-
-#content {
-    margin-bottom: 5em;
-    padding-top: 3em;
 }
 
 #channelGrid {
+    // margin-top: -20.28em;
     margin-bottom: 5em;
     // margin: 0 0.9375rem 5em;
-    #tagsChannel {
-        ul {
-            li {
-                text-align: right;
-                list-style: none;
+}
+
+#tabsChannel {
+    margin: 0;
+    padding: 3em 0 0;
+    background: $white;
+    li {
+        margin: 0;
+        width: 20%;
+        a {
+            @include neo;
+            @include bold;
+            padding: 0.75em 0;
+            margin: 0 5px;
+            color: $jet;
+            text-align: center;
+            font-size: rem-calc(14);
+            border: 1px solid $border;
+            border-bottom: none;
+            background: rgba($column, 0.5);
+            -webkit-border-top-left-radius: 10px;
+            -webkit-border-top-right-radius: 10px;
+            -moz-border-radius-topleft: 10px;
+            -moz-border-radius-topright: 10px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            &:hover {
+                color: $white;
+                background: rgba($primary, .75);
+                border-color: $primary;
             }
-            .tags {
-                line-height: 2;
-                margin-bottom: 10px;
-                font-size: rem-calc(13);
-                span {
-                    padding: 5px 10px;
-                    border: 1px solid $border;
-                    background: rgba($column, 0.5);
-                    border-radius: 25px;
-                }
-                &:hover {
-                    cursor: pointer;
-                    span {
-                        color: $white;
-                        background: rgba($primary, .75);
-                        border-color: $primary;
-                    }
-                }
-            }
-            .tags.active {
-                span {
-                    color: $white;
-                    border-color: $primary;
-                    background: $primary;
-                }
-            }
-            .disclaimer {
-                margin-top: 20px;
-                font-size: rem-calc(13);
+        }
+        &:first-child {
+            a {margin-left: 0;}
+        }
+        &:last-child {
+            a {margin-right: 0;}
+        }
+    }
+    .active a {
+        color: $white;
+        background: $primary;
+        border-color: $primary;
+    }
+}
+
+#tagsChannel {
+    margin-top: 6em;
+    li {
+        text-align: right;
+        list-style: none;
+    }
+    .tags {
+        line-height: 2;
+        margin-bottom: 10px;
+        font-size: rem-calc(13);
+        a {
+            padding: 5px 10px;
+            border: 1px solid $border;
+            background: rgba($column, 0.5);
+            border-radius: 25px;
+            color: $jet;
+            &:hover {
+                color: $white;
+                background: rgba($primary, .75);
+                border-color: $primary;
             }
         }
     }
+    .tags.active {
+        a {
+            color: $white;
+            border-color: $primary;
+            background: $primary;
+        }
+    }
+    .disclaimer {
+        margin-top: 20px;
+        font-size: rem-calc(13);
+    }
+}
+
+#loopContainer {
+    padding: 5px;
+    border: 1px solid $border;
+    background: $column;
+    .loopOfChannel {
+        background: white;
+        margin: 0;
+        li {
+            @include left;
+            list-style: none;
+            margin: 0;
+            width: 20%;
+            p {
+                @include neo;
+                color: $white;
+                padding: 0.20em 0 0;
+                margin: 0;
+                background: #484848;
+                text-align: center;
+            }
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+// Scaping bug's
+#fixedNavChannel {
+    .large-3, .medium-3 {
+        z-index: 999999;
+    }
+}
+
+#fixedNavChannel.scroll-to-fixed-fixed {
+    #tabsChannel {
+        box-shadow: 0 5px 2px -2px rgba($black, 0.20);
+    }
+}
+
+// Loop of info about HD and the dBox
+#content {
+    margin-bottom: 5em;
+    // padding-top: 3em;
 }
 
 #hdInfo {
@@ -256,7 +343,7 @@ h1, h2, h3, h4, h5, h5 {
             background: $black;
             th {
                 @include neo;
-                background-color: #333;
+                background-color: #484848;
                 color: $white;
             }
             .list-header {width: 40%}
