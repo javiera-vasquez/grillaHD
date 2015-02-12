@@ -193,8 +193,44 @@ h1, h2, h3, h4, h5, h5 {
     // margin-top: -20.28em;
     margin-bottom: 5em;
     // margin: 0 0.9375rem 5em;
+    .loading {@include none;}
 }
 
+// States of the grid
+#channelGrid.disable {
+    .loopOfChannel {
+        opacity: 0.5;
+        li {
+            -webkit-filter: grayscale(75%);
+            filter: grayscale(75%);
+        }
+    }
+}
+
+#channelGrid.loading {
+    .loading  {
+        display: block;
+        text-align: center;
+        img {
+            position: absolute;
+            margin-top: 50px;
+            z-index: 999;
+        }
+    }
+    .loopOfChannel {
+        opacity: .5;
+        li {
+            -webkit-filter: grayscale(50%);
+            filter: grayscale(50%);
+            // -webkit-filter: saturate(1);
+            // filter: saturate(1);
+            // -webkit-filter: blur(2px);
+            // filter: blur(2px);
+        }
+    }
+}
+
+// Modules of the grid
 #tabsChannel {
     margin: 0;
     padding: 3em 0 0;
@@ -281,12 +317,22 @@ h1, h2, h3, h4, h5, h5 {
     background: $column;
     .loopOfChannel {
         background: white;
+        min-height: 380px;
         margin: 0;
         li {
             @include left;
             list-style: none;
+            position: relative;
             margin: 0;
             width: 20%;
+            .label {
+                position: absolute;
+                top: 7px;
+                right: 10%;
+                // margin: 0 auto;
+            }
+            .label.new {background-color: #0EC292;}
+            .label.premiun {background-color: #EB6608;}
             p {
                 @include neo;
                 color: $white;
@@ -298,6 +344,11 @@ h1, h2, h3, h4, h5, h5 {
             &:hover {
                 cursor: pointer;
             }
+        }
+        .disable {
+            opacity: 0.75;
+            -webkit-filter: grayscale(1);
+            filter: grayscale(1);
         }
     }
 }
