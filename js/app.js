@@ -30,17 +30,16 @@ $("#fixedNavChannel").scrollToFixed({
 });
 
 // Add or delete element of the channelGrid
-// Show tabs
-var pack = $("#pack");
-var premiun = $("#premiun");
-var air = $("#air");
 var tabsTrigger = $("#tabsChannel .tabs");
+var tagsTrigger = $("#tagsChannel .tags");
 
+// Show tabs
 tabsTrigger.on('click', function() {
     // Ask for the id of the element
     var tabsId = $(this).attr('id');
     // Show al the items in the loops
     $(".loopOfChannel li").show();
+    tagsTrigger.removeClass("active");
     // Managing classes of the tabs
     if($(this).hasClass("active")) {
         console.log("estoy activo");
@@ -50,15 +49,16 @@ tabsTrigger.on('click', function() {
         $(this).addClass("active");
         // Show and hide elements on demand
         if(tabsId == 'pack') {
-            console.log("hola " + tabsId);
-            $(".loopOfChannel .premiun, .loopOfChannel .air").hide();
+            // console.log("hola " + tabsId);
+            // tagsTrigger.removeClass("disable");
+            $(".loopOfChannel li:not(.pack)").hide();
         } else if(tabsId == 'premiun') {
-            console.log("hola " + tabsId);
-            $(".loopOfChannel .pack, .loopOfChannel .air").hide();
+            tagsTrigger.removeClass("disable");
+            // $("#tagsChannel li:not(.tags-3)").addClass("disable");
+            $(".loopOfChannel li:not(.premiun)").hide();
         } else if(tabsId == 'air') {
-            console.log("hola " + tabsId);
-            $("#tagsChannel").hide();
-            $(".loopOfChannel .premiun, .loopOfChannel .pack").hide();
+            // tagsTrigger.addClass("disable");
+            $(".loopOfChannel li:not(.air)").hide();
         };
     };
     // return to base
@@ -66,3 +66,40 @@ tabsTrigger.on('click', function() {
 })
 
 // Show tags
+tagsTrigger.on('click', function() {
+    // Ask for the id of the element
+    var tagsId = $(this).attr('id');
+    // Show al the items in the loops
+    $(".loopOfChannel li").show();
+    // Managing classes of the tabs
+    if($(this).hasClass("active")) {
+        console.log("estoy activo");
+        tagsTrigger.removeClass("active");
+    } else {
+        tagsTrigger.removeClass("active");
+        $(this).addClass("active");
+        // Show and hide elements on demand
+        if(tagsId == 'tags-1') {
+            $(".loopOfChannel li:not(.tags-1)").hide();
+        } else if(tagsId == 'tags-2') {
+            $(".loopOfChannel li:not(.tags-2)").hide();
+        } else if(tagsId == 'tags-3') {
+            $(".loopOfChannel li:not(.tags-3)").hide();
+        } else if(tagsId == 'tags-4') {
+            $(".loopOfChannel li:not(.tags-4)").hide();
+        } else if(tagsId == 'tags-5') {
+            $(".loopOfChannel li:not(.tags-5)").hide();
+        } else if(tagsId == 'tags-6') {
+            $(".loopOfChannel li:not(.tags-6)").hide();
+        } else if(tagsId == 'tags-7') {
+            $(".loopOfChannel li:not(.tags-7)").hide();
+        } else if(tagsId == 'tags-8') {
+            $(".loopOfChannel li:not(.tags-8)").hide();
+        }
+    };
+    // return to base
+    event.preventDefault();
+})
+
+
+
