@@ -1,6 +1,22 @@
 // Init foundation
 $(document).foundation();
 
+// Smooth scrolling
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+
 // Define negative margin of the channel loop
 var negativeMargin = $("#tagsChannel").height() + 25;
 $("#loopContainer").css('margin-top', - negativeMargin);
@@ -33,12 +49,14 @@ $("#fixedNavChannel").scrollToFixed({
 var tabsTrigger = $("#tabsChannel .tabs");
 var tagsTrigger = $("#tagsChannel .tags");
 
+$(".loopOfChannel li").addClass("active");
+
 // Show tabs
 tabsTrigger.on('click', function() {
     // Ask for the id of the element
     var tabsId = $(this).attr('id');
     // Show al the items in the loops
-    $(".loopOfChannel li").show();
+    $(".loopOfChannel li").show().addClass("active");
     tagsTrigger.removeClass("active");
     // Managing classes of the tabs
     if($(this).hasClass("active")) {
@@ -51,16 +69,19 @@ tabsTrigger.on('click', function() {
         if(tabsId == 'pack') {
             // console.log("hola " + tabsId);
             // tagsTrigger.removeClass("disable");
-            $(".loopOfChannel li:not(.pack)").hide();
+            $(".loopOfChannel li:not(.pack)").hide().removeClass("active");
+            $(".loopOfChannel .pack").addClass("active");
             $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 180},'slow');
         } else if(tabsId == 'premiun') {
             tagsTrigger.removeClass("disable");
             // $("#tagsChannel li:not(.tags-3)").addClass("disable");
-            $(".loopOfChannel li:not(.premiun)").hide();
+            $(".loopOfChannel li:not(.premiun)").hide().removeClass("active");
+            $(".loopOfChannel .premiun").addClass("active");
             $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 180},'slow');
         } else if(tabsId == 'air') {
             // tagsTrigger.addClass("disable");
-            $(".loopOfChannel li:not(.air)").hide();
+            $(".loopOfChannel li:not(.air)").hide().removeClass("active");
+            $(".loopOfChannel .air").addClass("active");
             $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 180},'slow');
         };
     };
@@ -73,7 +94,7 @@ tagsTrigger.on('click', function() {
     // Ask for the id of the element
     var tagsId = $(this).attr('id');
     // Show al the items in the loops
-    $(".loopOfChannel li").show();
+    $(".loopOfChannel li.active").show();
     // Managing classes of the tabs
     if($(this).hasClass("active")) {
         console.log("estoy activo");
@@ -84,20 +105,28 @@ tagsTrigger.on('click', function() {
         // Show and hide elements on demand
         if(tagsId == 'tags-1') {
             $(".loopOfChannel li:not(.tags-1)").hide();
+            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 180},'slow');
         } else if(tagsId == 'tags-2') {
             $(".loopOfChannel li:not(.tags-2)").hide();
+            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 180},'slow');
         } else if(tagsId == 'tags-3') {
             $(".loopOfChannel li:not(.tags-3)").hide();
+            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 180},'slow');
         } else if(tagsId == 'tags-4') {
             $(".loopOfChannel li:not(.tags-4)").hide();
+            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 180},'slow');
         } else if(tagsId == 'tags-5') {
             $(".loopOfChannel li:not(.tags-5)").hide();
+            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 180},'slow');
         } else if(tagsId == 'tags-6') {
             $(".loopOfChannel li:not(.tags-6)").hide();
+            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 180},'slow');
         } else if(tagsId == 'tags-7') {
             $(".loopOfChannel li:not(.tags-7)").hide();
+            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 180},'slow');
         } else if(tagsId == 'tags-8') {
             $(".loopOfChannel li:not(.tags-8)").hide();
+            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 180},'slow');
         }
     };
     // return to base
