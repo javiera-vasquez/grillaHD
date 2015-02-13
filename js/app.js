@@ -52,13 +52,16 @@ tabsTrigger.on('click', function() {
             // console.log("hola " + tabsId);
             // tagsTrigger.removeClass("disable");
             $(".loopOfChannel li:not(.pack)").hide();
+            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 180},'slow');
         } else if(tabsId == 'premiun') {
             tagsTrigger.removeClass("disable");
             // $("#tagsChannel li:not(.tags-3)").addClass("disable");
             $(".loopOfChannel li:not(.premiun)").hide();
+            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 180},'slow');
         } else if(tabsId == 'air') {
             // tagsTrigger.addClass("disable");
             $(".loopOfChannel li:not(.air)").hide();
+            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 180},'slow');
         };
     };
     // return to base
@@ -100,6 +103,5 @@ tagsTrigger.on('click', function() {
     // return to base
     event.preventDefault();
 })
-
 
 
