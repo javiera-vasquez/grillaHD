@@ -1,6 +1,9 @@
 // Init foundation
 $(document).foundation();
 
+// bad hack
+$(".pricing-table:first").css('border-left', 'solid 1px #DDDDDD')
+
 // Smooth scrolling
 $(function() {
   $('a[href*=#]:not([href=#])').click(function() {
@@ -31,7 +34,7 @@ $("#region").scrollToFixed({
     marginTop: 80,
     zIndex: 990,
     limit: function() {
-        var limit = $("#hdInfo").offset().top - $(this).outerHeight(true) - 80
+        var limit = $("#optionsHd").offset().top - $(this).outerHeight(true) - 80
         return limit;
     }
 });
@@ -41,7 +44,7 @@ $("#fixedNavChannel").scrollToFixed({
     zIndex: 980,
     marginTop: $('#nav').outerHeight(true) + 60,
     limit: function() {
-        var limit = $("#hdInfo").offset().top - $(this).outerHeight(true) - 450
+        var limit = $("#optionsHd").offset().top - $(this).outerHeight(true) - 450
         return limit;
     }
 });
@@ -50,7 +53,7 @@ $("#fixedTagChannel").scrollToFixed({
     zIndex: 20,
     marginTop: $('#nav').outerHeight(true) + 160,
     limit: function() {
-        var limit = $("#hdInfo").offset().top - $(this).outerHeight(true) - 80
+        var limit = $("#optionsHd").offset().top - $(this).outerHeight(true) - 200
         return limit;
     }
 });

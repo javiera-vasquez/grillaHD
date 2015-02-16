@@ -985,8 +985,8 @@ $input-border-width: 2px;
 // $price-table-margin-bottom: rem-calc(20);
 
 // We use these to control the title styles
-// $price-title-bg: $oil;
-// $price-title-padding: rem-calc(15 20);
+$price-title-bg: black;
+$price-title-padding: rem-calc(5 10);
 // $price-title-align: center;
 // $price-title-color: $smoke;
 // $price-title-weight: $font-weight-normal;
@@ -995,7 +995,7 @@ $input-border-width: 2px;
 
 // We use these to control the price styles
 // $price-money-bg: $vapor;
-// $price-money-padding: rem-calc(15 20);
+$price-money-padding: rem-calc(5 10);
 // $price-money-align: center;
 // $price-money-color: $oil;
 // $price-money-weight: $font-weight-normal;
@@ -1005,7 +1005,7 @@ $input-border-width: 2px;
 // We use these to control the description styles
 // $price-bg: $white;
 // $price-desc-color: $monsoon;
-// $price-desc-padding: rem-calc(15);
+$price-desc-padding: rem-calc(10 5);
 // $price-desc-align: center;
 // $price-desc-font-size: rem-calc(12);
 // $price-desc-weight: $font-weight-normal;
@@ -1014,7 +1014,7 @@ $input-border-width: 2px;
 
 // We use these to control the list item styles
 // $price-item-color: $oil;
-// $price-item-padding: rem-calc(15);
+$price-item-padding: rem-calc(10 5);
 // $price-item-align: center;
 // $price-item-font-size: rem-calc(14);
 // $price-item-weight: $font-weight-normal;
@@ -1023,7 +1023,7 @@ $input-border-width: 2px;
 // We use these to control the CTA area styles
 // $price-cta-bg: $white;
 // $price-cta-align: center;
-// $price-cta-padding: rem-calc(20 20 0);
+$price-cta-padding: rem-calc(10 10 0);
 
 // 23. Progress Bar
 // - - - - - - - - - - - - - - - - - - - - - - - - -
