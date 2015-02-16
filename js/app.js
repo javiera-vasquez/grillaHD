@@ -41,6 +41,15 @@ $("#fixedNavChannel").scrollToFixed({
     zIndex: 980,
     marginTop: $('#nav').outerHeight(true) + 60,
     limit: function() {
+        var limit = $("#hdInfo").offset().top - $(this).outerHeight(true) - 450
+        return limit;
+    }
+});
+
+$("#fixedTagChannel").scrollToFixed({
+    zIndex: 20,
+    marginTop: $('#nav').outerHeight(true) + 160,
+    limit: function() {
         var limit = $("#hdInfo").offset().top - $(this).outerHeight(true) - 80
         return limit;
     }
@@ -49,7 +58,7 @@ $("#fixedNavChannel").scrollToFixed({
 // Add or delete element of the channelGrid
 var tabsTrigger = $("#tabsChannel .tabs");
 var tagsTrigger = $("#tagsChannel .tags");
-// var scroll = $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 160},'slow');
+function scroll() {$('html,body').animate({scrollTop: $("#channelGrid").offset().top - 160},'slow');} ;
 
 // Init base clase
 $(".loopOfChannel li").addClass("active");
@@ -77,7 +86,7 @@ tabsTrigger.on('click', function() {
             // Remove active channel
             $(".loopOfChannel .pack").addClass("active");
             // Scroll animation
-            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 160},'slow');
+            scroll();
             // Enable disable tags
             $("#tagsChannel li").removeClass("disable");
             $("#tags-8").addClass("disable");
@@ -87,7 +96,7 @@ tabsTrigger.on('click', function() {
             $(".loopOfChannel li:not(.premiun)").hide().removeClass("active");
             $(".loopOfChannel .premiun").addClass("active");
             // Scroll animation
-            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 160},'slow');
+            scroll();
             // Enable disable tags
             $("#tagsChannel li").removeClass("disable");
             $("#tagsChannel li:not(#tags-8, #tags-3, #tags-5)").addClass("disable");
@@ -96,7 +105,7 @@ tabsTrigger.on('click', function() {
             $(".loopOfChannel li:not(.air)").hide().removeClass("active");
             $(".loopOfChannel .air").addClass("active");
             // Scroll animation
-            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 160},'slow');
+            scroll();
             // Enable disable tags
             $("#tagsChannel li").addClass("disable");
         };
@@ -120,28 +129,28 @@ tagsTrigger.on('click', function() {
         // Show and hide elements on demand
         if(tagsId == 'tags-1') {
             $(".loopOfChannel li:not(.tags-1)").hide();
-            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 160},'slow');
+            scroll();
         } else if(tagsId == 'tags-2') {
             $(".loopOfChannel li:not(.tags-2)").hide();
-            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 160},'slow');
+            scroll();
         } else if(tagsId == 'tags-3') {
             $(".loopOfChannel li:not(.tags-3)").hide();
-            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 160},'slow');
+            scroll();
         } else if(tagsId == 'tags-4') {
             $(".loopOfChannel li:not(.tags-4)").hide();
-            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 160},'slow');
+            scroll();
         } else if(tagsId == 'tags-5') {
             $(".loopOfChannel li:not(.tags-5)").hide();
-            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 160},'slow');
+            scroll();
         } else if(tagsId == 'tags-6') {
             $(".loopOfChannel li:not(.tags-6)").hide();
-            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 160},'slow');
+            scroll();
         } else if(tagsId == 'tags-7') {
             $(".loopOfChannel li:not(.tags-7)").hide();
-            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 160},'slow');
+            scroll();
         } else if(tagsId == 'tags-8') {
             $(".loopOfChannel li:not(.tags-8)").hide();
-            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 160},'slow');
+            scroll();
         }
     };
     // return to base

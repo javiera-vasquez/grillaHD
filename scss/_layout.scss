@@ -279,7 +279,7 @@ h1, h2, h3, h4, h5, h5 {
 }
 
 #tagsChannel {
-    padding-top: 44px;
+    // padding-top: 44px;
     margin: 0;
     li {
         text-align: right;
@@ -367,9 +367,14 @@ h1, h2, h3, h4, h5, h5 {
 }
 
 .disclaimer {
-    margin: 10px 0 0;
+    margin: 20px 0 0;
     color: lighten($jet, 25%);
     font-size: rem-calc(12);
+    line-height: 1.3;
+}
+
+p.disclaimer {
+    margin: 10px 0 0;
 }
 
 // Scaping bug's
@@ -443,9 +448,10 @@ h1, h2, h3, h4, h5, h5 {
 }
 
 footer {
+    padding: 10px 0;
     background: $black url(../images/borde.png)  top repeat-x;
     .disclaimer {
-        margin-top: 90px;
+        margin-top: 80px;
         color: rgba($white, 0.5);
         font-size: rem-calc(11);
         a {
@@ -456,7 +462,7 @@ footer {
         text-align: right;
         margin-bottom: 0;
         .vtrcom img{
-            margin-top: 60px;
+            margin-top: 50px;
         }
     }
 }
@@ -528,9 +534,9 @@ footer {
         color: $white;
         font-size: rem-calc(16);
     }
-    color: rgba($white, 0.8);
-    font-size: rem-calc(13);
-    line-height: 1.5;
+    color: rgba($white, 0.9);
+    font-size: rem-calc(12);
+    line-height: 1.4;
 }
 
 // Modals classes
