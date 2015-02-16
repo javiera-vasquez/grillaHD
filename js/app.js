@@ -148,6 +148,38 @@ tagsTrigger.on('click', function() {
     event.preventDefault();
 })
 
+// start the modals
+$("#channelGrid.disable").on('click', function() {
+    $("#noRegion").modal({
+        closeClass: 'close-modal',
+        overlayClose: true
+    });
+    event.preventDefault();
+});
+
 // Trigger to launch modal's
-// $("#myModal").modal();
+$(".modal-list li .noVtr").on('click', function() {
+    $("#noVtr").modal({
+        closeClass: 'close-modal',
+        overlayClose: true
+    });
+    event.preventDefault();
+});
+
+$(".modal-list li .noFact").on('click', function() {
+    $("#noFact").modal({
+        closeClass: 'close-modal',
+        overlayClose: true
+    });
+    event.preventDefault();
+});
+
+$(".modal-list li .noChannel").on('click', function() {
+    $("#noChannel").modal({
+        closeClass: 'close-modal',
+        overlayClose: true
+    });
+    event.preventDefault();
+});
+
 
