@@ -9,7 +9,7 @@ $(function() {
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
       if (target.length) {
         $('html,body').animate({
-          scrollTop: target.offset().top
+          scrollTop: target.offset().top - 150
         }, 1000);
         return false;
       }
@@ -18,18 +18,18 @@ $(function() {
 });
 
 // Define negative margin of the channel loop
-var negativeMargin = $("#tagsChannel").height() + 25;
+var negativeMargin = $("#tagsChannel").height();
 $("#loopContainer").css('margin-top', - negativeMargin);
 
 // Fixed element's
 $("#nav").scrollToFixed({
-    zIndex: 9999,
+    zIndex: 995,
 });
 
 // Fixed the region combos
 $("#region").scrollToFixed({
     marginTop: 80,
-    zIndex: 9900,
+    zIndex: 990,
     limit: function() {
         var limit = $("#hdInfo").offset().top - $(this).outerHeight(true) - 80
         return limit;
@@ -38,6 +38,7 @@ $("#region").scrollToFixed({
 
 // Fixed the tabs
 $("#fixedNavChannel").scrollToFixed({
+    zIndex: 980,
     marginTop: $('#nav').outerHeight(true) + 60,
     limit: function() {
         var limit = $("#hdInfo").offset().top - $(this).outerHeight(true) - 80
@@ -48,7 +49,9 @@ $("#fixedNavChannel").scrollToFixed({
 // Add or delete element of the channelGrid
 var tabsTrigger = $("#tabsChannel .tabs");
 var tagsTrigger = $("#tagsChannel .tags");
+// var scroll = $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 160},'slow');
 
+// Init base clase
 $(".loopOfChannel li").addClass("active");
 
 // Show tabs
@@ -60,8 +63,8 @@ tabsTrigger.on('click', function() {
     tagsTrigger.removeClass("active");
     // Managing classes of the tabs
     if($(this).hasClass("active")) {
-        console.log("estoy activo");
         tabsTrigger.removeClass("active");
+        $("#tagsChannel li").removeClass("disable");
     } else {
         tabsTrigger.removeClass("active");
         $(this).addClass("active");
@@ -69,20 +72,33 @@ tabsTrigger.on('click', function() {
         if(tabsId == 'pack') {
             // console.log("hola " + tabsId);
             // tagsTrigger.removeClass("disable");
+            // Remove no active channel
             $(".loopOfChannel li:not(.pack)").hide().removeClass("active");
+            // Remove active channel
             $(".loopOfChannel .pack").addClass("active");
-            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 180},'slow');
+            // Scroll animation
+            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 160},'slow');
+            // Enable disable tags
+            $("#tagsChannel li").removeClass("disable");
+            $("#tags-8").addClass("disable");
         } else if(tabsId == 'premiun') {
             tagsTrigger.removeClass("disable");
             // $("#tagsChannel li:not(.tags-3)").addClass("disable");
             $(".loopOfChannel li:not(.premiun)").hide().removeClass("active");
             $(".loopOfChannel .premiun").addClass("active");
-            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 180},'slow');
+            // Scroll animation
+            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 160},'slow');
+            // Enable disable tags
+            $("#tagsChannel li").removeClass("disable");
+            $("#tagsChannel li:not(#tags-8, #tags-3, #tags-5)").addClass("disable");
         } else if(tabsId == 'air') {
             // tagsTrigger.addClass("disable");
             $(".loopOfChannel li:not(.air)").hide().removeClass("active");
             $(".loopOfChannel .air").addClass("active");
-            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 180},'slow');
+            // Scroll animation
+            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 160},'slow');
+            // Enable disable tags
+            $("#tagsChannel li").addClass("disable");
         };
     };
     // return to base
@@ -97,7 +113,6 @@ tagsTrigger.on('click', function() {
     $(".loopOfChannel li.active").show();
     // Managing classes of the tabs
     if($(this).hasClass("active")) {
-        console.log("estoy activo");
         tagsTrigger.removeClass("active");
     } else {
         tagsTrigger.removeClass("active");
@@ -105,32 +120,34 @@ tagsTrigger.on('click', function() {
         // Show and hide elements on demand
         if(tagsId == 'tags-1') {
             $(".loopOfChannel li:not(.tags-1)").hide();
-            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 180},'slow');
+            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 160},'slow');
         } else if(tagsId == 'tags-2') {
             $(".loopOfChannel li:not(.tags-2)").hide();
-            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 180},'slow');
+            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 160},'slow');
         } else if(tagsId == 'tags-3') {
             $(".loopOfChannel li:not(.tags-3)").hide();
-            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 180},'slow');
+            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 160},'slow');
         } else if(tagsId == 'tags-4') {
             $(".loopOfChannel li:not(.tags-4)").hide();
-            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 180},'slow');
+            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 160},'slow');
         } else if(tagsId == 'tags-5') {
             $(".loopOfChannel li:not(.tags-5)").hide();
-            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 180},'slow');
+            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 160},'slow');
         } else if(tagsId == 'tags-6') {
             $(".loopOfChannel li:not(.tags-6)").hide();
-            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 180},'slow');
+            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 160},'slow');
         } else if(tagsId == 'tags-7') {
             $(".loopOfChannel li:not(.tags-7)").hide();
-            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 180},'slow');
+            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 160},'slow');
         } else if(tagsId == 'tags-8') {
             $(".loopOfChannel li:not(.tags-8)").hide();
-            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 180},'slow');
+            $('html,body').animate({scrollTop: $("#channelGrid").offset().top - 160},'slow');
         }
     };
     // return to base
     event.preventDefault();
 })
 
+// Trigger to launch modal's
+// $("#myModal").modal();
 

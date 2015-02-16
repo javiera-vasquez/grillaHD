@@ -138,9 +138,11 @@ h1, h2, h3, h4, h5, h5 {
 }
 
 #introduction {
-    background: url(../images/bk.jpg) repeat-x bottom;
+    // background: url(../images/bk.jpg) repeat-x bottom;
+    border-bottom: 45px solid $black;
     p {
         text-align: center;
+        margin-bottom: 0;
         // margin-top: -30px;
     }
 }
@@ -234,7 +236,7 @@ h1, h2, h3, h4, h5, h5 {
 // Modules of the grid
 #tabsChannel {
     margin: 0;
-    padding: 3em 0 0;
+    // padding: 3em 0 0;
     background: $white;
     li {
         margin: 0;
@@ -277,7 +279,8 @@ h1, h2, h3, h4, h5, h5 {
 }
 
 #tagsChannel {
-    padding-top: 6em;
+    padding-top: 44px;
+    margin: 0;
     li {
         text-align: right;
         list-style: none;
@@ -305,6 +308,17 @@ h1, h2, h3, h4, h5, h5 {
             color: $white;
             border-color: $primary;
             background: $primary;
+        }
+    }
+    .tags.disable {
+        cursor: default;
+        opacity: 0.5;
+        a {
+            &:hover {
+                color: $jet;
+                border: 1px solid $border;
+                background: rgba($column, 0.5);
+            }
         }
     }
     .disclaimer {
@@ -358,6 +372,10 @@ h1, h2, h3, h4, h5, h5 {
 
 // Scaping bug's
 #fixedNavChannel {
+    .fakeBackground {
+        height: 50px;
+        background-color: $white;
+    }
     .large-3, .medium-3 {
         z-index: 999999;
     }
