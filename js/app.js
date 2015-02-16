@@ -148,7 +148,38 @@ tagsTrigger.on('click', function() {
     event.preventDefault();
 })
 
-// start the modals
+// Trigger to launch modal's
+function noVtr() {
+    $("#noVtr").modal({
+        closeClass: 'close-modal',
+        overlayClose: true
+    });
+};
+
+function noFact() {
+    $("#noFact").modal({
+        closeClass: 'close-modal',
+        overlayClose: true
+    });
+};
+
+function noChannel() {
+    $("#noChannel").modal({
+        closeClass: 'close-modal',
+        overlayClose: true
+    });
+};
+
+// Show or disable channels of the grid
+function basic() {
+    $(".loopOfChannel .new").addClass("disable")
+};
+
+function full() {
+    $(".loopOfChannel .new").removeClass("disable")
+};
+
+// Modal for disable grid
 $("#channelGrid.disable").on('click', function() {
     $("#noRegion").modal({
         closeClass: 'close-modal',
@@ -157,7 +188,7 @@ $("#channelGrid.disable").on('click', function() {
     event.preventDefault();
 });
 
-// Trigger to launch modal's
+// Modal's on click()
 $(".modal-list li .noVtr").on('click', function() {
     $("#noVtr").modal({
         closeClass: 'close-modal',
