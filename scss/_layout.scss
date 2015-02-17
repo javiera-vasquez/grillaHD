@@ -341,12 +341,20 @@ h1, h2, h3, h4, h5, h5 {
             width: 20%;
             .label {
                 position: absolute;
-                top: 7px;
-                right: 10%;
+                bottom: 27px;
+                right: 35%;
+                border-radius: 0;
                 // margin: 0 auto;
             }
-            .label.new {background-color: #0EC292;}
-            .label.premiun {background-color: #EB6608;}
+            .label.new {background-color: #484848;}
+            .label.abierto {
+                background-color: #0EC292;
+                right: 33%;
+            }
+            .label.premiun {
+                background-color: #EB6608;
+                right: 30%;
+            }
             p {
                 @include neo;
                 color: $white;
@@ -354,6 +362,10 @@ h1, h2, h3, h4, h5, h5 {
                 margin: 0;
                 background: #484848;
                 text-align: center;
+            }
+            p.channel {
+                padding: 0;
+                background-color: $white;
             }
             &:hover {
                 cursor: pointer;
@@ -606,7 +618,7 @@ footer {
 
 // Small screens
 @media only screen and (max-width: 40em) {
-    #tabsChannel li {width: 33.3333%;}
+    #tabsChannel li {width: 25%;}
     #loopContainer .loopOfChannel li .label {font-size: rem-calc(7);}
     .introduction-to-hd {
         font-size: rem-calc(16);
@@ -616,7 +628,7 @@ footer {
 
 // Medium screens
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
-    #tabsChannel li {width: 33.3333%;}
+    #tabsChannel li {width: 25%;}
     .introduction-to-hd {
         font-size: rem-calc(18);
         margin: 2em 0;
