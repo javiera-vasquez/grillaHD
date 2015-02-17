@@ -115,6 +115,7 @@ tabsTrigger.on('click', function() {
     };
     // return to base
     event.preventDefault();
+    event.returnValue = false;
 })
 
 // Show tags
