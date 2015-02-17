@@ -73,6 +73,8 @@ tabsTrigger.on('click', function() {
     // Show al the items in the loops
     $(".loopOfChannel li").show().addClass("active");
     tagsTrigger.removeClass("active");
+    // Scroll animation
+    scroll();
     // Managing classes of the tabs
     if($(this).hasClass("active")) {
         tabsTrigger.removeClass("active");
@@ -82,40 +84,28 @@ tabsTrigger.on('click', function() {
         $(this).addClass("active");
         // Show and hide elements on demand
         if(tabsId == 'pack') {
-            // console.log("hola " + tabsId);
-            // tagsTrigger.removeClass("disable");
             // Remove no active channel
             $(".loopOfChannel li:not(.pack)").hide().removeClass("active");
             // Remove active channel
             $(".loopOfChannel .pack").addClass("active");
-            // Scroll animation
-            scroll();
             // Enable disable tags
             $("#tagsChannel li").removeClass("disable");
             $("#tags-8").addClass("disable");
         } else if(tabsId == 'premiun') {
             tagsTrigger.removeClass("disable");
-            // $("#tagsChannel li:not(.tags-3)").addClass("disable");
             $(".loopOfChannel li:not(.premiun)").hide().removeClass("active");
             $(".loopOfChannel .premiun").addClass("active");
-            // Scroll animation
-            scroll();
             // Enable disable tags
             $("#tagsChannel li").removeClass("disable");
             $("#tagsChannel li:not(#tags-8, #tags-3, #tags-5)").addClass("disable");
         } else if(tabsId == 'air') {
-            // tagsTrigger.addClass("disable");
             $(".loopOfChannel li:not(.air)").hide().removeClass("active");
             $(".loopOfChannel .air").addClass("active");
-            // Scroll animation
-            scroll();
             // Enable disable tags
             $("#tagsChannel li").addClass("disable");
         } else if(tabsId == 'todos') {
             $(".loopOfChannel .air").addClass("active");
             $("#tagsChannel li").removeClass("disable");
-            // Scroll animation
-            scroll();
         };
     };
     // return to base
@@ -129,6 +119,8 @@ tagsTrigger.on('click', function() {
     var tagsId = $(this).attr('id');
     // Show al the items in the loops
     $(".loopOfChannel li.active").show();
+    // Scroll animation
+    scroll();
     // Managing classes of the tabs
     if($(this).hasClass("active")) {
         tagsTrigger.removeClass("active");
@@ -138,28 +130,20 @@ tagsTrigger.on('click', function() {
         // Show and hide elements on demand
         if(tagsId == 'tags-1') {
             $(".loopOfChannel li:not(.tags-1)").hide();
-            scroll();
         } else if(tagsId == 'tags-2') {
             $(".loopOfChannel li:not(.tags-2)").hide();
-            scroll();
         } else if(tagsId == 'tags-3') {
             $(".loopOfChannel li:not(.tags-3)").hide();
-            scroll();
         } else if(tagsId == 'tags-4') {
             $(".loopOfChannel li:not(.tags-4)").hide();
-            scroll();
         } else if(tagsId == 'tags-5') {
             $(".loopOfChannel li:not(.tags-5)").hide();
-            scroll();
         } else if(tagsId == 'tags-6') {
             $(".loopOfChannel li:not(.tags-6)").hide();
-            scroll();
         } else if(tagsId == 'tags-7') {
             $(".loopOfChannel li:not(.tags-7)").hide();
-            scroll();
         } else if(tagsId == 'tags-8') {
             $(".loopOfChannel li:not(.tags-8)").hide();
-            scroll();
         }
     };
     // return to base
@@ -207,29 +191,5 @@ $("#channelGrid.disable").on('click', function() {
     event.preventDefault();
 });
 
-// Modal's on click()
-$(".modal-list li .noVtr").on('click', function() {
-    $("#noVtr").modal({
-        closeClass: 'close-modal',
-        overlayClose: true
-    });
-    event.preventDefault();
-});
-
-$(".modal-list li .noFact").on('click', function() {
-    $("#noFact").modal({
-        closeClass: 'close-modal',
-        overlayClose: true
-    });
-    event.preventDefault();
-});
-
-$(".modal-list li .noChannel").on('click', function() {
-    $("#noChannel").modal({
-        closeClass: 'close-modal',
-        overlayClose: true
-    });
-    event.preventDefault();
-});
 
 
